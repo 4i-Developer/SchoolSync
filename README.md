@@ -1,3 +1,20 @@
+<p align="center"><a href="https://davin.id" target="_blank"><img src="https://i.ibb.co/pKkKzwQ/4i.png" width="200" alt="4i Logo"></a></p>
+
+## Sync School
+
+Perangkat lunak manajemen sekolah yang kami rancang adalah solusi komprehensif yang dirancang khusus untuk membantu sekolah dalam mengelola berbagai aspek operasional dan administratif. Dengan berbagai fiturnya, perangkat lunak ini dapat meningkatkan efisiensi dan efektivitas pengelolaan sekolah, memberikan keuntungan bagi guru, siswa, dan orang tua.
+
+## Kelompok 7
+
+Nama Kelompok : 4i Developer
+
+- [Davin Wahyu Wardana](https://davinwardana.com) (6706223003)
+- Dimas Dwi Kurniawan (6706220041)
+- Anugrah Panji Pradipa (6706223061)
+- Azka Faris Akbar (6706220020)
+
+##
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
