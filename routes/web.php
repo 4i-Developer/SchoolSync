@@ -36,4 +36,20 @@ Route::middleware('auth')->group(function () {
     })->name('guru.jadwal');
 });
 
+Route::get('/developer', function () {
+    // Hanya admin yang dapat mengakses halaman ini
+})->middleware('checkRole:developer');
+Route::get('/admin', function () {
+    // Hanya admin yang dapat mengakses halaman ini
+})->middleware('checkRole:admin');
+Route::get('/guru', function () {
+    // Hanya guru yang dapat mengakses halaman ini
+})->middleware('checkRole:guru');
+Route::get('/wali', function () {
+    // Hanya wali murid yang dapat mengakses halaman ini
+})->middleware('checkRole:wali');
+Route::get('/siswa', function () {
+    // Hanya siswa yang dapat mengakses halaman ini
+})->middleware('checkRole:siswa');
+
 require __DIR__.'/auth.php';
