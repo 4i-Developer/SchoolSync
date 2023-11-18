@@ -21,6 +21,6 @@ class CheckRole
         }
 
         // Jika tidak memiliki akses, alihkan atau kembalikan respons yang sesuai
-        return redirect()->route('home')->with('error', 'Akses ditolak.');
+        return redirect()->route('dashboard')->with('error', 'Akses ditolak.');
     }
 }

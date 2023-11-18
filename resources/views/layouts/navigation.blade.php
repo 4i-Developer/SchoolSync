@@ -6,7 +6,8 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                        <!-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800" /> -->
+                        <img src="{{ asset('https://i.ibb.co/tDMNzVx/ss.jpg') }}" class="block h-9 w-auto" alt="Logo" />
                     </a>
                 </div>
 
@@ -16,7 +17,15 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+            @if(Auth::check())
+                @if(Auth::user()->role === 'admin') 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Admin') }}
+                </x-nav-link>
+                </div>
+            @elseif(Auth::user()->role === 'guru') 
+            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                 <x-nav-link :href="route('guru.presensi')" :active="request()->routeIs('guru.presensi')">
                         {{ __('Presensi') }}
                 </x-nav-link>
@@ -26,6 +35,20 @@
                         {{ __('Jadwal') }}
                     </x-nav-link>
                 </div>
+            @elseif(Auth::user()->role === 'siswa') 
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Siswa') }}
+                </x-nav-link>
+                </div>
+            @elseif(Auth::user()->role === 'developer') 
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Developer') }}
+                </x-nav-link>
+                </div>
+                @endif
+             @endif
             </div>
 
             <!-- Settings Dropdown -->
