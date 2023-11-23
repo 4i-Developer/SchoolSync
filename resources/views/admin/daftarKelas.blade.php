@@ -17,20 +17,20 @@
                     <table class="min-w-full table-auto w-full"> 
                         <thead>
                             <tr class="bg-gray-100">
-                                <th class="border px-4 py-2">No</th>
-                                <th class="border px-4 py-2">Nama Kelas</th>
-                                <th class="border px-4 py-2">Wali Kelas</th>
-                                <th class="border px-4 py-2">Edit</th>
+                                <th class="border px-4 py-2 text-center">No</th>
+                                <th class="border px-4 py-2 text-center">Nama Kelas</th>
+                                <th class="border px-4 py-2 text-center">Wali Kelas</th>
+                                <th class="border px-4 py-2 text-center">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($kelas as $key => $kelass)
                                 <tr>
-                                    <td class="border px-4 py-2">{{ $key + 1 }}</td>
+                                    <td class="border px-4 py-2 text-center">{{ $key + 1 }}</td>
                                     <td class="border px-4 py-2">{{ $kelass->nama_kelas }}</td>
-                                    <td class="border px-4 py-2">{{ $kelass->id_guru }}</td>
-                                    <td class="border px-4 py-2">
-                                        <a href="{{ route('kelas.infoKelas', $kelass->id) }}" class="btn btn-icon btn-sm btn-dark"><i class="bi bi-heart"></i></a>
+                                    <td class="border px-4 py-2">{{ $kelass->guru->name }}</td>
+                                    <td class="border px-4 py-2 text-center">
+                                        <a href="{{ route('kelas.infoKelas', $kelass->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {
+        Route::post('/kelas', [AdminController::class, 'store'])->name('kelas.store');
         Route::get('/kelas', [AdminController::class, 'index'])->name('kelas.daftarKelas');
         Route::get('/kelasTambah', [AdminController::class, 'create'])->name('kelas.tambahKelas');
         Route::get('/kelasView/{id}', [AdminController::class, 'show'])->name('kelas.infoKelas');

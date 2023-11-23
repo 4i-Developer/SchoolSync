@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Kelas;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -21,20 +22,18 @@ class AdminController extends Controller
 
     public function create()
     {
-    return view('admin.tambahKelas');
+    $users = User::where('role', 'guru')->get();
+
+    return view('admin.tambahKelas', compact('users'));
     }
 
     public function store(Request $request)
     {
-    $request->validate([
-        'nama_kelas' => 'required|string|max:255',
-        'id_guru' => 'required|integer',
-    ]);
     Kelas::create([
         'nama_kelas' => $request->namaKelas,
         'id_guru' => $request->idGuru,
     ]);
     Session::flash('success', 'Kelas berhasil ditambahkan!');
-    return redirect()->route('admin.tambahKelas');
+    return redirect()->route('kelas.tambahKelas');
     }
 }
