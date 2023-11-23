@@ -1,8 +1,18 @@
 <x-app-layout>
     <x-slot name="header">
-        @if(Auth::user()->role !== 'siswa')
+        @if(Auth::user()->role === 'developer')
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Developer') }}
+        </h2>
+        @endif
+        @if(Auth::user()->role === 'admin')
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Admin') }}
+        </h2>
+        @endif
+        @if(Auth::user()->role === 'guru')
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Guru') }}
         </h2>
         @endif
         @if(Auth::user()->role === 'siswa')
@@ -13,6 +23,14 @@
             <div class="ml-4"><br>
                 <p class="font-semibold">{{ Auth::user()->name }}</p>
                 <p>{{ Auth::user()->nis }}</p>
+                <p>Kelas XII</p>
+            </div>
+        </div>
+        @endif
+        @if(Auth::user()->role === 'wali')
+        <div class="flex items-center">
+            <div class="ml-4"><br>
+                <p class="font-semibold">{{ Auth::user()->name }}</p>
                 <p>Kelas XII</p>
             </div>
         </div>

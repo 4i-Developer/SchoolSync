@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/guru/jadwal', function () {
             return view('guru.jadwal');
         })->name('guru.jadwal');
+    });
+
+    Route::middleware(['auth', 'checkRole:admin'])->group(function () {
+        Route::get('/kelas', [AdminController::class, 'index'])->name('kelas.daftarKelas');
+        Route::get('/kelasTambah', [AdminController::class, 'create'])->name('kelas.tambahKelas');
+        Route::get('/kelasView/{id}', [AdminController::class, 'show'])->name('kelas.infoKelas');
     });
 });
 

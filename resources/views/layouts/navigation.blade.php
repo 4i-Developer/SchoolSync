@@ -20,8 +20,8 @@
             @if(Auth::check())
                 @if(Auth::user()->role === 'admin') 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Admin') }}
+                <x-nav-link :href="route('kelas.daftarKelas')" :active="request()->routeIs('kelas.daftarKelas')">
+                        {{ __('Kelas') }}
                 </x-nav-link>
                 </div>
             @elseif(Auth::user()->role === 'guru') 
