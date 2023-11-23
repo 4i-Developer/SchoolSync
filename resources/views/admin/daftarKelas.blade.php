@@ -9,8 +9,14 @@
 | NIM   : 6706223003
 | Kelas : D3IF-4603 
 -->
+    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif  
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <a href="{{ route('kelas.tambahKelas') }}" class="btn btn-icon btn-dark">Tambah</a><br><br>
@@ -30,7 +36,7 @@
                                     <td class="border px-4 py-2">{{ $kelass->nama_kelas }}</td>
                                     <td class="border px-4 py-2">{{ $kelass->guru->name }}</td>
                                     <td class="border px-4 py-2 text-center">
-                                        <a href="{{ route('kelas.infoKelas', $kelass->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
+                                        <a href="{{ route('kelas.editKelas', $kelass->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

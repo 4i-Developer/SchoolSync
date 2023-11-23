@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KelasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,10 +39,12 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {
-        Route::post('/kelas', [AdminController::class, 'store'])->name('kelas.store');
-        Route::get('/kelas', [AdminController::class, 'index'])->name('kelas.daftarKelas');
-        Route::get('/kelasTambah', [AdminController::class, 'create'])->name('kelas.tambahKelas');
-        Route::get('/kelasView/{id}', [AdminController::class, 'show'])->name('kelas.infoKelas');
+        Route::post('/kelas', [KelasController::class, 'store'])->name('kelas.store');
+        Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.daftarKelas');
+        Route::get('/kelasTambah', [KelasController::class, 'create'])->name('kelas.tambahKelas');
+        Route::get('/kelasView/{id}', [KelasController::class, 'show'])->name('kelas.infoKelas');
+        Route::put('/kelasUpdate/{id}', [KelasController::class, 'update'])->name('kelas.update');
+        Route::get('/kelasUpdate/{id}', [KelasController::class, 'edit'])->name('kelas.editKelas');
     });
 });
 

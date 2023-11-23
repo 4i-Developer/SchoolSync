@@ -29,7 +29,7 @@
 
                         <!-- Wali Kelas -->
                         <div class="mt-4">
-                            <x-input-label for="idGuru" :value="__('Jenis Koleksi')" />
+                            <x-input-label for="idGuru" :value="__('Wali Kelas')" />
                             <select id="idGuru" name="idGuru" class="block mt-1 w-full" required autofocus>
                             @foreach($users as $user)
                                 @if($user->role == 'guru')
@@ -42,7 +42,7 @@
 
                         <!-- Tombol Submit -->
                         <div class="flex items-center justify-end mt-4">
-                            <a href="#" class="btn btn-dark" onclick="goBack()">Back</a>
+                            <a href="{{ route('kelas.daftarKelas') }}" class="btn btn-dark">Back</a>
                             <x-primary-button class="ml-4" type="submit">Tambah Kelas</x-primary-button>
                         </div>
                     </form>
@@ -50,9 +50,4 @@
             </div>
         </div>
     </div>
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </x-app-layout>
