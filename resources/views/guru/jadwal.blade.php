@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Daftar Presensi') }}
+            {{ __('Jadwal Pelajaran') }}
         </h2>
     </x-slot>
 
@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h3>Jadwal Pelajaran</h3>
+                    <h3>Kelas {{ $kelas->nama_kelas }}</h3>
                     <br>
                     <table class="min-w-full table-auto w-full">
                         <thead>
@@ -53,7 +53,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
+                                <th class="border px-4 py-2 text-center"><a href="{{ route('dashboard') }}" class="btn btn-dark">Edit</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Selasa</td>
@@ -85,7 +85,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
+                                <th class="border px-4 py-2 text-center"><a href="{{ route('dashboard') }}" class="btn btn-dark">Edit</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Rabu</td>
@@ -117,7 +117,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
+                                <th class="border px-4 py-2 text-center"><a href="{{ route('dashboard') }}" class="btn btn-dark">Edit</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Kamis</td>
@@ -149,7 +149,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
+                                <th class="border px-4 py-2 text-center"><a href="{{ route('dashboard') }}" class="btn btn-dark">Edit</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Jumat</td>
@@ -181,7 +181,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
+                                <th class="border px-4 py-2 text-center"><a href="{{ route('dashboard') }}" class="btn btn-dark">Edit</a></th>
                             </tr>
                         </tbody>
                     </table>

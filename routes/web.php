@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\PresensiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,9 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::middleware(['auth', 'checkRole:guru'])->group(function () {
-        Route::get('/guru/presensi', function () {
-            return view('guru.presensi');
-        })->name('guru.presensi');
+        Route::get('/guru/presensi', [PresensiController::class, 'showPresensi'])->name('guru.presensi');
         Route::get('/guru/jadwal', [JadwalController::class, 'showJadwal'])->name('guru.jadwal');
     });
 
