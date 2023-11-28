@@ -14,7 +14,7 @@
                             <tr class="bg-gray-100">
                                 <th class="border px-4 py-2 text-center">Hari</th>
                                 <th class="border px-4 py-2 text-center">07.00 - 09.30</th>
-                                <th class="border px-4 py-2 text-center">07.00 - 12.00</th>
+                                <th class="border px-4 py-2 text-center">10.00 - 12.00</th>
                                 <th class="border px-4 py-2 text-center">13.00 - 14.30</th>
                                 <th class="border px-4 py-2 text-center">14.30 - 16.00</th>
                             </tr>

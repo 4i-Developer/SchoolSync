@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Models\Kelas;
 use App\Models\Presensi;
 
 class DashboardController extends Controller
@@ -13,6 +14,7 @@ class DashboardController extends Controller
     {
         $userId = $request->user()->id;
         $now = Carbon::now();
+        $kelasUser = Kelas::find($request->user()->kelas);
         $start = Carbon::today()->setHour(6)->setMinute(0)->setSecond(0);
         $end = Carbon::today()->setHour(7)->setMinute(0)->setSecond(0);
         $isPresensiTime = $now->greaterThanOrEqualTo($start) && $now->lessThan($end);
@@ -21,6 +23,7 @@ class DashboardController extends Controller
         return view('dashboard', [
             'isPresensiTime' => $isPresensiTime,
             'hasPresensiToday' => $hasPresensiToday,
+            'kelasUser' => $kelasUser,
         ]);
     }
 

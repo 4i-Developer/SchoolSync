@@ -23,7 +23,7 @@
             <div class="ml-4"><br>
                 <p class="font-semibold">{{ Auth::user()->name }}</p>
                 <p>{{ Auth::user()->nis }}</p>
-                <p>Kelas XII</p>
+                <p>{{ $kelasUser ? $kelasUser->nama_kelas : '' }}</p>
             </div>
         </div>
         @endif
@@ -31,7 +31,7 @@
         <div class="flex items-center">
             <div class="ml-4"><br>
                 <p class="font-semibold">{{ Auth::user()->name }}</p>
-                <p>Kelas XII</p>
+                <p>{{ $kelasUser ? $kelasUser->nama_kelas : '' }}</p>
             </div>
         </div>
         @endif
@@ -48,17 +48,78 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="text-right">
-                        <p>Ruangan</p>
-                        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Kelas XX</h2>
-                        </div>
-                        <div class="text-left">
-                            <p>MATEMATIKA</p>
-                        </div>
-                        <div class="text-right">
-                            <p>Waktu</p>
-                            <p>08.00 - 09.00</p>
-                        </div>
+
+                    <div class="text-right">
+                        <p>Kelas</p>
+                        <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ $kelasUser ? $kelasUser->nama_kelas : '' }}</h2>
+                    </div>
+
+                    <div class="text-left">
+                        <p>
+                            @php
+                                $hari = \Carbon\Carbon::now()->format('l');
+                                $harinya = 'senin1';
+                                $jamWaktu = '08.00 - 09.30';
+                                switch ($hari) {
+                                    case 'Monday':
+                                        $hari = 'senin';
+                                        break;
+                                    case 'Tuesday':
+                                        $hari = 'selasa';
+                                        break;
+                                    case 'Wednesday':
+                                        $hari = 'rabu';
+                                        break;
+                                    case 'Thursday':
+                                        $hari = 'kamis';
+                                        break;
+                                    case 'Friday':
+                                        $hari = 'jumat';
+                                        break;
+                                    case 'Saturday':
+                                        $hari = 'sabtu';
+                                        break;
+                                    case 'Sunday':
+                                        $hari = 'minggu';
+                                        break;
+                                    default:
+                                        $hari = 'invalid';
+                                        break;
+                                }
+                                $jamSekarang = \Carbon\Carbon::now()->format('H:i');
+                                if ($jamSekarang >= '00:00' && $jamSekarang < '09:30') {
+                                    $harinya = $hari.'1';
+                                    $jamWaktu = '07.00 - 09.30';
+                                    $mataPelajaran = $kelasUser ? $kelasUser->$harinya : '';
+                                } elseif ($jamSekarang >= '09:30' && $jamSekarang < '10:00') {
+                                    $jamWaktu = '09.30 - 10.00';
+                                    $mataPelajaran = 'Istirahat 1';
+                                } elseif ($jamSekarang >= '10:00' && $jamSekarang < '12:00') {
+                                    $harinya = $hari.'2';
+                                    $jamWaktu = '10.00 - 12.00';
+                                    $mataPelajaran = $kelasUser ? $kelasUser->$harinya : '';
+                                } elseif ($jamSekarang >= '12:00' && $jamSekarang < '13:00') {
+                                    $jamWaktu = '12.00 - 13.00';
+                                    $mataPelajaran = 'Istirahat 2';
+                                } elseif ($jamSekarang >= '13:00' && $jamSekarang < '14:30') {
+                                    $harinya = $hari.'3';
+                                    $jamWaktu = '13.00 - 14.30';
+                                    $mataPelajaran = $kelasUser ? $kelasUser->$harinya : '';
+                                } elseif ($jamSekarang >= '14:30' && $jamSekarang < '23:59') {
+                                    $harinya = $hari.'4';
+                                    $jamWaktu = '14.30 - 16.00';
+                                    $mataPelajaran = $kelasUser ? $kelasUser->$harinya : '';
+                                }
+                                echo $mataPelajaran;
+                            @endphp
+                        </p>
+                    </div>
+
+                    <div class="text-right">
+                        <p>Waktu</p>
+                        <p>{{ $jamWaktu }}</p>
+                    </div>
+
                     </div>
                 </div>
             </div>
@@ -69,7 +130,7 @@
         $userId = Auth::id();
         $now = now();
         $start = now()->setHour(6)->setMinute(0)->setSecond(0);
-        $end = now()->setHour(11)->setMinute(0)->setSecond(0);
+        $end = now()->setHour(10)->setMinute(0)->setSecond(0);
         $dashboardController = new \App\Http\Controllers\DashboardController();
         $isPresensiTime = $now->greaterThanOrEqualTo($start) && $now->lessThan($end);
         $hasPresensiToday = $dashboardController->checkPresensiToday($userId);
