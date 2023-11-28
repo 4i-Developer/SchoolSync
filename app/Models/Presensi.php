@@ -15,8 +15,12 @@ class Presensi extends Model
     
     protected $fillable = [
         'id_user',
-        'id_kelas',
         'time',
         'status',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

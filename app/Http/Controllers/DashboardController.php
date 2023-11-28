@@ -40,7 +40,6 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
         $userId = $request->user()->id;
-        $kelasId = $request->user()->id_kelas;
 
         $now = Carbon::now();
         $start = Carbon::today()->setHour(6)->setMinute(0)->setSecond(0);
@@ -49,7 +48,6 @@ class DashboardController extends Controller
 
         Presensi::create([
             'id_user' => $userId,
-            'id_kelas' => $kelasId,
             'time' => $now,
             'status' => $status,
         ]);

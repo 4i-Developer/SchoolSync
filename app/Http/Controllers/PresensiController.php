@@ -12,16 +12,19 @@ class PresensiController extends Controller
 {
     public function showPresensi()
     {
-        $userId = auth()->user()->id;
 
+        $userId = auth()->user()->id;
         $user = User::findOrFail($userId);
         $userKelas = $user->id_kelas;
-        $kelas = Kelas::find($user->id_kelas);
+        $kelas = Kelas::find($userKelas);
 
         $today = Carbon::today()->toDateString();
-        $presensiHariIni = Presensi::where('id_kelas', $userKelas)
-            ->whereDate('created_at', $today)
-            ->get();
+        
+        $presensiHariIni = Presensi::whereHas('user', function ($query) use ($userKelas) {
+            $query->where('id_kelas', $userKelas);
+        })
+        ->whereDate('created_at', $today)
+        ->get();
 
         $dataPresensi = [];
         foreach ($presensiHariIni as $index => $presensi) {
