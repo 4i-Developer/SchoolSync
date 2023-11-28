@@ -8,7 +8,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">Jadwal Pelajaran<br><br>
+                <div class="p-6 text-gray-900">
+                    <h3>Jadwal Pelajaran</h3>
+                    <br>
                     <table class="min-w-full table-auto w-full">
                         <thead>
                             <tr class="bg-gray-100">
@@ -17,49 +19,174 @@
                                 <th class="border px-4 py-2 text-center">10.00 - 12.00</th>
                                 <th class="border px-4 py-2 text-center">13.00 - 14.30</th>
                                 <th class="border px-4 py-2 text-center">14.30 - 16.00</th>
+                                <th class="border px-4 py-2 text-center">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
-                                <tr>
-                                    <td class="border px-4 py-2 text-center">Senin</td>
-                                    <td class="border px-4 py-2 text-center">Matematika</td>
-                                    <td class="border px-4 py-2 text-center">Matematika Wajib</td>
-                                    <td class="border px-4 py-2 text-center">Fisika</td>
-                                    <td class="border px-4 py-2 text-center">Kimia</td>
-                                </tr>
-                                <tr>
-                                    <td class="border px-4 py-2 text-center">Selasa</td>
-                                    <td class="border px-4 py-2 text-center">Biologi</td>
-                                    <td class="border px-4 py-2 text-center">PPkn</td>
-                                    <td class="border px-4 py-2 text-center">Agama</td>
-                                    <td class="border px-4 py-2 text-center">Sejarah</td>
-                                </tr>
-                                <tr>
-                                    <td class="border px-4 py-2 text-center">Rabu</td>
-                                    <td class="border px-4 py-2 text-center">Bahasa Daerah</td>
-                                    <td class="border px-4 py-2 text-center">Bahasa Inggris</td>
-                                    <td class="border px-4 py-2 text-center">Bahasa Indonesia</td>
-                                    <td class="border px-4 py-2 text-center">Bahasa Arab</td>
-                                </tr>
-                                <tr>
-                                    <td class="border px-4 py-2 text-center">Kamis</td>
-                                    <td class="border px-4 py-2 text-center">Sosiologi</td>
-                                    <td class="border px-4 py-2 text-center">Ekonomi</td>
-                                    <td class="border px-4 py-2 text-center">TIK</td>
-                                    <td class="border px-4 py-2 text-center">Geografi</td>
-                                </tr>
-                                <tr>
-                                    <td class="border px-4 py-2 text-center">Jumat</td>
-                                    <td class="border px-4 py-2 text-center">PJOK</td>
-                                    <td class="border px-4 py-2 text-center">Prakarya</td>
-                                    <td class="border px-4 py-2 text-center">Seni Budaya</td>
-                                    <td class="border px-4 py-2 text-center">-</td>
-                                </tr>
+                            <tr>
+                                <td class="border px-4 py-2 text-center">Senin</td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->senin1 !== null)
+                                        {{ $kelas->senin1 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->senin2 !== null)
+                                        {{ $kelas->senin2 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->senin3 !== null)
+                                        {{ $kelas->senin3 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->senin4 !== null)
+                                        {{ $kelas->senin4 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <th class="border px-4 py-2 text-center">Edit</th>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 text-center">Selasa</td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->selasa1 !== null)
+                                        {{ $kelas->selasa1 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->selasa2 !== null)
+                                        {{ $kelas->selasa2 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->selasa3 !== null)
+                                        {{ $kelas->selasa3 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->selasa4 !== null)
+                                        {{ $kelas->selasa4 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <th class="border px-4 py-2 text-center">Edit</th>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 text-center">Rabu</td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->rabu1 !== null)
+                                        {{ $kelas->rabu1 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->rabu2 !== null)
+                                        {{ $kelas->rabu2 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->rabu3 !== null)
+                                        {{ $kelas->rabu3 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->rabu4 !== null)
+                                        {{ $kelas->rabu4 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <th class="border px-4 py-2 text-center">Edit</th>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 text-center">Kamis</td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->kamis1 !== null)
+                                        {{ $kelas->kamis1 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->kamis2 !== null)
+                                        {{ $kelas->kamis2 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->kamis3 !== null)
+                                        {{ $kelas->kamis3 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->kamis4 !== null)
+                                        {{ $kelas->kamis4 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <th class="border px-4 py-2 text-center">Edit</th>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 text-center">Jumat</td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->jumat1 !== null)
+                                        {{ $kelas->jumat1 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->jumat2 !== null)
+                                        {{ $kelas->jumat2 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->jumat3 !== null)
+                                        {{ $kelas->jumat3 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2 text-center">
+                                    @if ($kelas->jumat4 !== null)
+                                        {{ $kelas->jumat4 }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <th class="border px-4 py-2 text-center">Edit</th>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
 </x-app-layout>

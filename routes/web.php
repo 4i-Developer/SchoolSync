@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JadwalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +33,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/guru/presensi', function () {
             return view('guru.presensi');
         })->name('guru.presensi');
-    
-        Route::get('/guru/jadwal', function () {
-            return view('guru.jadwal');
-        })->name('guru.jadwal');
+        Route::get('/guru/jadwal', [JadwalController::class, 'showJadwal'])->name('guru.jadwal');
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {
