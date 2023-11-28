@@ -15,8 +15,8 @@ class PresensiController extends Controller
         $userId = auth()->user()->id;
 
         $user = User::findOrFail($userId);
-        $userKelas = $user->kelas;
-        $kelas = Kelas::find($user->kelas);
+        $userKelas = $user->id_kelas;
+        $kelas = Kelas::find($user->id_kelas);
 
         $today = Carbon::today()->toDateString();
         $presensiHariIni = Presensi::where('id_kelas', $userKelas)

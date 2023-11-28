@@ -14,7 +14,7 @@ class DashboardController extends Controller
     {
         $userId = $request->user()->id;
         $now = Carbon::now();
-        $kelasUser = Kelas::find($request->user()->kelas);
+        $kelasUser = Kelas::find($request->user()->id_kelas);
         $start = Carbon::today()->setHour(6)->setMinute(0)->setSecond(0);
         $end = Carbon::today()->setHour(7)->setMinute(0)->setSecond(0);
         $isPresensiTime = $now->greaterThanOrEqualTo($start) && $now->lessThan($end);
@@ -40,7 +40,7 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
         $userId = $request->user()->id;
-        $kelasId = $request->user()->kelas;
+        $kelasId = $request->user()->id_kelas;
 
         $now = Carbon::now();
         $start = Carbon::today()->setHour(6)->setMinute(0)->setSecond(0);

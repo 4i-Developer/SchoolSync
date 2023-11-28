@@ -13,7 +13,7 @@ class JadwalController extends Controller
         $userId = auth()->user()->id;
         $user = User::findOrFail($userId);
 
-        $kelas = Kelas::find($user->kelas);
+        $kelas = Kelas::find($user->id_kelas);
 
         return view('guru.jadwal', compact('kelas'));
     }
