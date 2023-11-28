@@ -53,7 +53,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center">Edit</th>
+                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Selasa</td>
@@ -85,7 +85,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center">Edit</th>
+                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Rabu</td>
@@ -117,7 +117,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center">Edit</th>
+                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Kamis</td>
@@ -149,7 +149,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center">Edit</th>
+                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
                             </tr>
                             <tr>
                                 <td class="border px-4 py-2 text-center">Jumat</td>
@@ -181,7 +181,7 @@
                                         -
                                     @endif
                                 </td>
-                                <th class="border px-4 py-2 text-center">Edit</th>
+                                <th class="border px-4 py-2 text-center"><a href="">✏️</a></th>
                             </tr>
                         </tbody>
                     </table>
