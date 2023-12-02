@@ -79,14 +79,19 @@ class BeritaKelasController extends Controller
         $berita->konten = $validatedData['konten'];
 
         if ($request->hasFile('gambar')) {
+            // pake delete gambar
+            // $image = $request->file('gambar');
+            // $imageName = time() . '.' . $image->getClientOriginalExtension();
+            // if ($berita->gambar) {
+            //     Storage::delete('public/images/beritakelas/' . $berita->gambar);
+            // }
+            // $image->storeAs('public/images/beritakelas', $imageName);
+            // $berita->gambar = $imageName;
+
+            // tanpa delete gambar
             $image = $request->file('gambar');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-
-            if ($berita->gambar) {
-                Storage::delete('public/images/beritakelas/' . $berita->gambar);
-            }
-
-            $image->storeAs('public/images/beritakelas', $imageName);
+            $image->move(public_path('images/beritakelas'), $imageName);
             $berita->gambar = $imageName;
         }
 
