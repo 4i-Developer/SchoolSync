@@ -8,6 +8,7 @@ use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\BeritaKelasController;
 use App\Http\Controllers\BeritaSekolahController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/beritaKelasTambah', [BeritaKelasController::class, 'create'])->name('beritakelas.tambahBerita');
         Route::put('/beritaKelasUpdate/{id}', [BeritaKelasController::class, 'update'])->name('beritakelas.update');
         Route::get('/beritaKelasUpdate/{id}', [BeritaKelasController::class, 'edit'])->name('beritakelas.editBerita');
+        // siswa
+        Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+        Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.daftarSiswa');
+        Route::get('/siswaTambah', [SiswaController::class, 'create'])->name('siswa.tambahSiswa');
+        Route::put('/siswaUpdate/{id}', [SiswaController::class, 'update'])->name('siswa.update');
+        Route::get('/siswaUpdate/{id}', [SiswaController::class, 'edit'])->name('siswa.editSiswa');
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {
