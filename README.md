@@ -1,4 +1,4 @@
-<p align="center"><a href="https://google.com" target="_blank"><img src="https://i.ibb.co/pKkKzwQ/4i.png" width="200" alt="4i Logo"></a></p>
+<p align="center"><a href="https://schoolsync.my.id" target="_blank"><img src="https://i.ibb.co/pKkKzwQ/4i.png" width="200" alt="4i Logo"></a></p>
 
 ## Sync School
 
