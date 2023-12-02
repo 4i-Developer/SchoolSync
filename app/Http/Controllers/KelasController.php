@@ -14,12 +14,6 @@ class KelasController extends Controller
         return view('admin.daftarKelas', compact('kelas'));
     }
 
-    public function show($id)
-    {
-        $kelas = Kelas::findOrFail($id);
-        return view('admin.infoKelas', compact('kelas'));
-    }
-
     public function create()
     {
     $users = User::where('role', 'guru')->get();

@@ -11,4 +11,13 @@ class BeritaKelas extends Model
     // Nama    : Davin Wahyu Wardana
     // NIM     : 6706223003
     // Kelas   : D3IF-4603
+    protected $table = 'berita_kelas';
+    
+    protected $fillable = [
+        'id_user',
+        'id_kelas',
+        'gambar',
+        'judul',
+        'konten',
+    ];
 }

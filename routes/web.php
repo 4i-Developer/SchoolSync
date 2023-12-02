@@ -5,6 +5,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\BeritaKelasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/guru/jadwal', [JadwalController::class, 'showJadwal'])->name('guru.jadwal');
         Route::put('/jadwalUpdate/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
         Route::get('/jadwalUpdate/{id}', [JadwalController::class, 'edit'])->name('jadwal.editJadwal');
+        Route::post('/beritaKelas', [BeritaKelasController::class, 'store'])->name('beritakelas.store');
+        Route::get('/beritaKelas', [BeritaKelasController::class, 'index'])->name('beritakelas.daftarBerita');
+        Route::get('/beritaKelasTambah', [BeritaKelasController::class, 'create'])->name('beritakelas.tambahBerita');
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {

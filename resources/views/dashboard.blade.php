@@ -18,7 +18,7 @@
         @if(Auth::user()->role === 'siswa')
         <div class="flex items-center">
             <div>
-                <img src="{{ Auth::user()->profile }}" width="75" alt="Profile" class="w-24 h-24 object-cover mt-4">
+                <img src="{{ asset('images/profile/' . Auth::user()->profile) }}" width="75" alt="Profile" class="w-24 h-24 object-cover mt-4">
             </div>
             <div class="ml-4"><br>
                 <p class="font-semibold">{{ Auth::user()->name }}</p>

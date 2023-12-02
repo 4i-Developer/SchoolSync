@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <!-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800" /> -->
-                        <img src="{{ asset('https://i.ibb.co/tDMNzVx/ss.jpg') }}" class="block h-9 w-auto" alt="Logo" />
+                        <img src="{{ asset('images/logo/favicon.jpeg') }}" class="block h-9 w-auto" alt="Logo" />
                     </a>
                 </div>
 
@@ -33,6 +33,11 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('guru.jadwal')" :active="request()->routeIs('guru.jadwal')">
                         {{ __('Jadwal') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('beritakelas.daftarBerita')" :active="request()->routeIs('beritakelas.daftarBerita')">
+                        {{ __('Berita') }}
                     </x-nav-link>
                 </div>
             @elseif(Auth::user()->role === 'siswa') 
