@@ -7,6 +7,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\BeritaKelasController;
 use App\Http\Controllers\BeritaSekolahController;
+use App\Http\Controllers\GuruController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,6 +64,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/beritaSekolahTambah', [BeritaSekolahController::class, 'create'])->name('beritasekolah.tambahBerita');
         Route::put('/beritaSekolahUpdate/{id}', [BeritaSekolahController::class, 'update'])->name('beritasekolah.update');
         Route::get('/beritaSekolahUpdate/{id}', [BeritaSekolahController::class, 'edit'])->name('beritasekolah.editBerita');
+        // guru
+        Route::post('/guru', [GuruController::class, 'store'])->name('guru.store');
+        Route::get('/guru', [GuruController::class, 'index'])->name('guru.daftarGuru');
+        Route::get('/guruTambah', [GuruController::class, 'create'])->name('guru.tambahGuru');
+        Route::put('/guruUpdate/{id}', [GuruController::class, 'update'])->name('guru.update');
+        Route::get('/guruUpdate/{id}', [GuruController::class, 'edit'])->name('guru.editGuru');
     });
 });
 

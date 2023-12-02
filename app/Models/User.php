@@ -46,6 +46,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Kelas::class, 'id_kelas', 'id');
     }
+    public function kelas_null()
+    {
+        return $this->belongsTo(Kelas::class, 'id_kelas');
+    }
     public function presensi(): HasMany
     {
         return $this->hasMany(Presensi::class, 'id', 'id_user');
