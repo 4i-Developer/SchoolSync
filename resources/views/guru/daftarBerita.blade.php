@@ -29,12 +29,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($beritaKelas as $key => $beritaKelass)
+                            @foreach($berita as $key => $beritaKelas)
                                 <tr>
                                     <td class="border px-4 py-2 text-center">{{ $key + 1 }}</td>
-                                    <td class="border px-4 py-2">{{ $beritaKelass->judul }}</td>
+                                    <td class="border px-4 py-2">{{ $beritaKelas->judul }}</td>
                                     <td class="border px-4 py-2 text-center">
-                                        <a href="{{ route('kelas.editKelas', $beritaKelass->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
+                                        <a href="{{ route('beritakelas.editBerita', $beritaKelas->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

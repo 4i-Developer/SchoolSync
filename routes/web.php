@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/beritaKelas', [BeritaKelasController::class, 'store'])->name('beritakelas.store');
         Route::get('/beritaKelas', [BeritaKelasController::class, 'index'])->name('beritakelas.daftarBerita');
         Route::get('/beritaKelasTambah', [BeritaKelasController::class, 'create'])->name('beritakelas.tambahBerita');
+        Route::put('/beritaKelasUpdate/{id}', [BeritaKelasController::class, 'update'])->name('beritakelas.update');
+        Route::get('/beritaKelasUpdate/{id}', [BeritaKelasController::class, 'edit'])->name('beritakelas.editBerita');
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {
