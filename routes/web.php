@@ -27,6 +27,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::post('/dashboard', [DashboardController::class, 'store'])->name('dashboard.presensi');
 Route::get('/beritaKelas/{id}', [BeritaKelasController::class, 'show'])->name('beritakelas.show');
+Route::get('/beritaSekolah/{id}', [BeritaSekolahController::class, 'show'])->name('beritakelas.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

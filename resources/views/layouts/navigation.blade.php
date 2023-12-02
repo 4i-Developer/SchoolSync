@@ -24,6 +24,11 @@
                         {{ __('Kelas') }}
                 </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('beritasekolah.daftarBerita')" :active="request()->routeIs('beritasekolah.daftarBerita')">
+                        {{ __('Berita') }}
+                    </x-nav-link>
+                </div>
             @elseif(Auth::user()->role === 'guru') 
             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                 <x-nav-link :href="route('guru.presensi')" :active="request()->routeIs('guru.presensi')">
