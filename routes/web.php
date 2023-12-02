@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware(['auth', 'checkRole:guru'])->group(function () {
         Route::get('/guru/presensi', [PresensiController::class, 'showPresensi'])->name('guru.presensi');
         Route::get('/guru/jadwal', [JadwalController::class, 'showJadwal'])->name('guru.jadwal');
+        Route::put('/jadwalUpdate/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
+        Route::get('/jadwalUpdate/{id}', [JadwalController::class, 'edit'])->name('jadwal.editJadwal');
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {
