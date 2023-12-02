@@ -36,6 +36,11 @@
                 </div>
             @elseif(Auth::user()->role === 'guru') 
             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('siswa.daftarSiswa')" :active="request()->routeIs('siswa.daftarSiswa')">
+                        {{ __('Siswa') }}
+                </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                 <x-nav-link :href="route('guru.presensi')" :active="request()->routeIs('guru.presensi')">
                         {{ __('Presensi') }}
                 </x-nav-link>
