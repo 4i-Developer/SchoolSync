@@ -25,6 +25,7 @@
                             <tr class="bg-gray-100">
                                 <th class="border px-4 py-2 text-center">No</th>
                                 <th class="border px-4 py-2 text-center">Nama Guru</th>
+                                <th class="border px-4 py-2 text-center">NIK</th>
                                 <th class="border px-4 py-2 text-center">Kelas</th>
                                 <th class="border px-4 py-2 text-center">Edit</th>
                             </tr>
@@ -34,6 +35,7 @@
                                 <tr>
                                     <td class="border px-4 py-2 text-center">{{ $key + 1 }}</td>
                                     <td class="border px-4 py-2">{{ $guruu->name }}</td>
+                                    <td class="border px-4 py-2">{{ $guruu->nik }}</td>
                                     <td class="border px-4 py-2">
                                     @if ($guruu->kelas_null)
                                         {{ $guruu->kelas_null->nama_kelas }}

@@ -53,7 +53,7 @@ class JadwalController extends Controller
             'jumat4' => $input['jumat4'],
         ]);
 
-        return redirect()->route('guru.jadwal')->with('success', 'Jadwal berhasil diperbarui');
+        return redirect()->route('guru.jadwal')->with('success', 'Jadwal berhasil diperbarui!');
     }
 
 }
