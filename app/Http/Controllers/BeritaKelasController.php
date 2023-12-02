@@ -22,6 +22,13 @@ class BeritaKelasController extends Controller
     {
         return view('guru.tambahBerita');
     }
+
+    public function show($id)
+    {
+        $beritaKelas = BeritaKelas::findOrFail($id);
+
+        return view('global.beritaKelas', compact('beritaKelas'));
+    }
     
     public function store(Request $request)
     {
