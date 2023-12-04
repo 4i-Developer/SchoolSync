@@ -9,6 +9,7 @@ use App\Http\Controllers\BeritaKelasController;
 use App\Http\Controllers\BeritaSekolahController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\WaliController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +58,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/siswaTambah', [SiswaController::class, 'create'])->name('siswa.tambahSiswa');
         Route::put('/siswaUpdate/{id}', [SiswaController::class, 'update'])->name('siswa.update');
         Route::get('/siswaUpdate/{id}', [SiswaController::class, 'edit'])->name('siswa.editSiswa');
+        // wali
+        Route::post('/wali', [WaliController::class, 'store'])->name('wali.store');
+        Route::get('/wali', [WaliController::class, 'index'])->name('wali.daftarWali');
+        Route::get('/waliTambah', [WaliController::class, 'create'])->name('wali.tambahWali');
+        Route::put('/waliUpdate/{id}', [WaliController::class, 'update'])->name('wali.update');
+        Route::get('/waliUpdate/{id}', [WaliController::class, 'edit'])->name('wali.editWali');
     });
 
     Route::middleware(['auth', 'checkRole:admin'])->group(function () {
