@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class BeritaSekolah extends Model
 {
@@ -19,4 +20,9 @@ class BeritaSekolah extends Model
         'judul',
         'konten',
     ];
+
+    public function publisher()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

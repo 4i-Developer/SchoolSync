@@ -20,8 +20,9 @@ class BeritaSekolahController extends Controller
 
     public function showBeritaSekolah()
     {
-        $beritaSekolah = BeritaSekolah::where('status', 'show')->get();
+        $beritaSekolah = BeritaSekolah::with('publisher')->where('status', 'show')->get();
         return view('global.showBeritaSekolah', compact('beritaSekolah'));
+
     }
 
     public function show($id)
