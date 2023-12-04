@@ -32,20 +32,30 @@ class KelasController extends Controller
     {
 
         $kelas = Kelas::findOrFail($id);
+        $oldGuruId = $kelas->id_guru;
+
+        User::where('id', $oldGuruId)->update(['id_kelas' => null]);
+
         $kelas->update([
-            'nama_kelas' => $request->namaKelas,
             'id_guru' => $request->idGuru,
         ]);
+
+        User::where('id', $request->idGuru)->update(['id_kelas' => $id]);
 
         return redirect()->route('kelas.daftarKelas')->with('success', 'Kelas berhasil diperbarui!');
     }
 
     public function store(Request $request)
     {
-    Kelas::create([
+    $kelas = Kelas::create([
         'nama_kelas' => $request->namaKelas,
         'id_guru' => $request->idGuru,
     ]);
+    $kelasId = $kelas->id;
+
+    $guru = User::findOrFail($request->idGuru);
+    $guru->id_kelas = $kelasId;
+    $guru->save();
     Session::flash('success', 'Kelas berhasil ditambahkan!');
     return redirect()->route('kelas.tambahKelas');
     }

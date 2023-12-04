@@ -51,7 +51,6 @@ class SiswaController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'nis' => ['required', 'numeric', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
         ]);
