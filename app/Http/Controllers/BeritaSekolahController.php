@@ -18,6 +18,12 @@ class BeritaSekolahController extends Controller
         return view('admin.tambahBerita');
     }
 
+    public function showBeritaSekolah()
+    {
+        $beritaSekolah = BeritaSekolah::where('status', 'show')->get();
+        return view('global.showBeritaSekolah', compact('beritaSekolah'));
+    }
+
     public function show($id)
     {
         $beritaSekolah = BeritaSekolah::findOrFail($id);
