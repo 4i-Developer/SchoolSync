@@ -58,4 +58,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Presensi::class, 'id', 'id_user');
     }
+    public function murid()
+    {
+        return $this->belongsTo(User::class, 'id_murid');
+    }
 }

@@ -29,9 +29,15 @@
         @endif
         @if(Auth::user()->role === 'wali')
         <div class="flex items-center">
-            <div class="ml-4"><br>
+            <div class="ml-4">
                 <p class="font-semibold">{{ Auth::user()->name }}</p>
-                <p>{{ $kelasUser ? $kelasUser->nama_kelas : '' }}</p>
+                @php
+                    $murid = App\Models\User::find(Auth::user()->id)->murid;
+                @endphp
+                @if($murid)
+                    <p>Wali Murid dari {{ $murid->name }}</p>
+                @endif
+                <p>{{ $kelasUser ? $kelasUser->nama_kelas : '' }} ({{ $murid->nis }})</p>
             </div>
         </div>
         @endif
@@ -164,6 +170,48 @@
         </div>
     @endif
 
+    @endif
+
+    @if(Auth::user()->role === 'wali')
+        <br><br><br>
+    @php
+    $user = Auth::user();
+    $userId = $user->id;
+    $muridId = $user->id_murid;
+    $now = now();
+    $start = now()->setHour(6)->setMinute(0)->setSecond(0);
+    $end = now()->setHour(10)->setMinute(0)->setSecond(0);
+    $dashboardController = new \App\Http\Controllers\DashboardController();
+    $isPresensiTime = $now->greaterThanOrEqualTo($start) && $now->lessThan($end);
+    $hasPresensiToday = $dashboardController->checkPresensiToday($muridId);
+@endphp
+
+@if($hasPresensiToday)
+    @php
+        $presensiData = $dashboardController->getPresensiData($muridId);
+        if ($presensiData) {
+            $jamPresensi = \Carbon\Carbon::parse($presensiData->time)->format('H:i');
+            $statusPresensi = $presensiData->status == '1' ? 'TEPAT WAKTU' : 'TERLAMBAT';
+        } else {
+            $jamPresensi = '';
+            $statusPresensi = '';
+        }
+    @endphp
+    <div class="mt-4 text-center">
+        <button class="btn btn-outline-secondary">ANAK ANDA SUDAH PRESENSI<br>CHECK IN : {{ $jamPresensi }}<br>STATUS : {{ $statusPresensi }}</button>
+    </div>
+@elseif($isPresensiTime)
+    <form action="{{ route('dashboard.presensi') }}" method="POST">
+        @csrf
+        <div class="mt-4 text-center">
+            <button type="submit" class="btn btn-outline-secondary">ANAK ANDA<br>BELUM PRESENSI<br>HARI INI</button>
+        </div>
+    </form>
+@else
+    <div class="mt-4 text-center">
+        <button class="btn btn-outline-secondary">ANAK ANDA<br>TIDAK PRESENSI<br>HARI INI</button>
+    </div>
+@endif
 
     @endif
 
