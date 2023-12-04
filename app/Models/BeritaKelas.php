@@ -20,4 +20,9 @@ class BeritaKelas extends Model
         'judul',
         'konten',
     ];
+    
+    public function publisher()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

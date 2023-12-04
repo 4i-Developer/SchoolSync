@@ -62,11 +62,21 @@
                 </div>
             @elseif(Auth::user()->role === 'siswa') 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('beritakelasshow')" :active="request()->routeIs('beritakelasshow') || request()->routeIs('beritakelas.show')">
+                        {{ __('Berita Kelas') }}
+                </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                 <x-nav-link :href="route('beritasekolahshow')" :active="request()->routeIs('beritasekolahshow') || request()->routeIs('beritasekolah.show')">
                         {{ __('Berita Sekolah') }}
                 </x-nav-link>
                 </div>
-            @elseif(Auth::user()->role === 'siswa') 
+            @elseif(Auth::user()->role === 'wali') 
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('beritakelasshow')" :active="request()->routeIs('beritakelasshow') || request()->routeIs('beritakelas.show')">
+                        {{ __('Berita Kelas') }}
+                </x-nav-link>
+                </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                 <x-nav-link :href="route('beritasekolahshow')" :active="request()->routeIs('beritasekolahshow') || request()->routeIs('beritasekolah.show')">
                         {{ __('Berita Sekolah') }}

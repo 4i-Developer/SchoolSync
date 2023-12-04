@@ -28,6 +28,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::post('/dashboard', [DashboardController::class, 'store'])->name('dashboard.presensi');
+Route::get('/beritaKelas/show', [BeritaKelasController::class, 'showBeritaKelas'])->name('beritakelasshow');
 Route::get('/beritaKelas/{id}', [BeritaKelasController::class, 'show'])->name('beritakelas.show');
 Route::get('/beritaSekolah/show', [BeritaSekolahController::class, 'showBeritaSekolah'])->name('beritasekolahshow');
 Route::get('/beritaSekolah/{id}', [BeritaSekolahController::class, 'show'])->name('beritasekolah.show');

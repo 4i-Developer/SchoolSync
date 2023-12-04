@@ -30,6 +30,13 @@ class BeritaKelasController extends Controller
 
         return view('global.beritaKelas', compact('beritaKelas'));
     }
+
+    public function showBeritaKelas()
+    {
+        $idKelas = auth()->user()->id_kelas;
+        $beritaKelas = BeritaKelas::with('publisher')->where('id_kelas', $idKelas)->where('status', 'show')->get();
+        return view('global.showBeritaKelas', compact('beritaKelas'));
+    }
     
     public function store(Request $request)
     {
