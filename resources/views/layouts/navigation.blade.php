@@ -61,27 +61,51 @@
                 </x-nav-link>
                 </div>
             @elseif(Auth::user()->role === 'siswa') 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                <x-nav-link :href="route('beritakelasshow')" :active="request()->routeIs('beritakelasshow') || request()->routeIs('beritakelas.show')">
-                        {{ __('Berita Kelas') }}
-                </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                <x-nav-link :href="route('beritasekolahshow')" :active="request()->routeIs('beritasekolahshow') || request()->routeIs('beritasekolah.show')">
-                        {{ __('Berita Sekolah') }}
-                </x-nav-link>
-                </div>
+            <div class="hidden space-x-8 sm:flex sm:items-center sm:ms-10">
+                <x-dropdown align="right" width="auto">
+                    <x-slot name="trigger">
+                        <x-nav-link>
+                        <button class="flex items-center text-base font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+                            Berita
+                        </button>
+                        </x-nav-link>
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <div class="py-1">
+                            <x-dropdown-link :href="route('beritakelasshow')" :active="request()->routeIs('beritakelasshow') || request()->routeIs('beritakelas.show')">
+                                Berita Kelas
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('beritasekolahshow')" :active="request()->routeIs('beritasekolahshow') || request()->routeIs('beritasekolah.show')">
+                                Berita Sekolah
+                            </x-dropdown-link>
+                        </div>
+                    </x-slot>
+                </x-dropdown>
+            </div>
             @elseif(Auth::user()->role === 'wali') 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                <x-nav-link :href="route('beritakelasshow')" :active="request()->routeIs('beritakelasshow') || request()->routeIs('beritakelas.show')">
-                        {{ __('Berita Kelas') }}
-                </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                <x-nav-link :href="route('beritasekolahshow')" :active="request()->routeIs('beritasekolahshow') || request()->routeIs('beritasekolah.show')">
-                        {{ __('Berita Sekolah') }}
-                </x-nav-link>
-                </div>
+            <div class="hidden space-x-8 sm:flex sm:items-center sm:ms-10">
+                <x-dropdown align="right" width="auto">
+                    <x-slot name="trigger">
+                        <x-nav-link>
+                        <button class="flex items-center text-base font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+                            Berita
+                        </button>
+                        </x-nav-link>
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <div class="py-1">
+                            <x-dropdown-link :href="route('beritakelasshow')" :active="request()->routeIs('beritakelasshow') || request()->routeIs('beritakelas.show')">
+                                Berita Kelas
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('beritasekolahshow')" :active="request()->routeIs('beritasekolahshow') || request()->routeIs('beritasekolah.show')">
+                                Berita Sekolah
+                            </x-dropdown-link>
+                        </div>
+                    </x-slot>
+                </x-dropdown>
+            </div>
             @elseif(Auth::user()->role === 'developer') 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
