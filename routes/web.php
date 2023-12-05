@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware(['auth', 'checkRole:guru'])->group(function () {
         // presensi
         Route::get('/guru/presensi', [PresensiController::class, 'showPresensi'])->name('guru.presensi');
+        Route::get('/export-presensi', [PresensiController::class, 'exportPresensi'])->name('presensi.export');
         // jadwal
         Route::get('/guru/jadwal', [JadwalController::class, 'showJadwal'])->name('guru.jadwal');
         Route::put('/jadwalUpdate/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
