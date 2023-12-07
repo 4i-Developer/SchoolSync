@@ -135,15 +135,11 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<address>
-								<p>143 castle road 517</p>
-								<p class="mb-4">district, kiyev port south Canada</p>
+								<p>Telkom University</p>
+								<p class="mb-4">Dayeuhkolot, Bandung, Indonesia.</p>
 								<div class="d-flex align-items-center">
-									<p class="mr-4 mb-0">+3 123 456 789</p>
-									<a href="mailto:info@yourmail.com" class="footer-link">info@yourmail.com</a>
-								</div>
-								<div class="d-flex align-items-center">
-									<p class="mr-4 mb-0">+1 222 345 342</p>
-									<a href="mailto:Marshmallow@yourmail.com" class="footer-link">Marshmallow@yourmail.com</a>
+									<p class="mr-4 mb-0">+62 812 1353 9307</p>
+									<a href="mailto:support@schoolsync.my.id" class="footer-link">support@schoolsync.my.id</a>
 								</div>
 							</address>
 							<div class="social-icons">
