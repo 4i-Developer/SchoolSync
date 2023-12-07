@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="home/vendors/aos/css/aos.css">
 		<link rel="stylesheet" href="home/vendors/jquery-flipster/css/jquery.flipster.css">
 		<link rel="stylesheet" href="home/css/style.css">
-		<link rel="shortcut icon" href="home/images/favicon.png" />
+		<link rel="shortcut icon" href="images/logo/favicon.jpeg" />
 	</head>
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<div id="mobile-menu-overlay"></div>
@@ -23,7 +23,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 					<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-						<img src="home/images/logo-dark.svg" class="logo-mobile-menu" alt="logo">
+						School Sync
 						<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
 					</div>
 					<ul class="navbar-nav ml-auto align-items-center">
@@ -61,181 +61,34 @@
 					</div>
 				</div>
 			</section>
-			<section class="our-services" id="services">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<h5 class="text-dark">We’re offering</h5>
-							<h3 class="font-weight-medium text-dark mb-5">Creative Digital Agency</h3>
-						</div>
-					</div>
-					<div class="row" data-aos="fade-up">
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="home/images/integrated-marketing.svg" alt="integrated-marketing" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Integrated 
-									Marketing
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box"   data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="home/images/design-development.svg" alt="design-development" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Design & 
-									Development
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="home/images/digital-strategy.svg" alt="digital-strategy" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Digital 
-									Strategy
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="row" data-aos="fade-up">
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box  pb-lg-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="home/images/digital-marketing.svg" alt="digital-marketing" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Digital 
-									Marketing
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box pb-lg-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="home/images/growth-strategy.svg" alt="growth-strategy" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Growth 
-									Strategy
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box pb-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="home/images/saving-strategy.svg" alt="saving-strategy" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Saving 
-									Strategy
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
 			<section class="our-process" id="about">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-6" data-aos="fade-up">
-							<h5 class="text-dark">Our work process</h5>
-							<h3 class="font-weight-medium text-dark">Discover New Idea With Us!</h3>
-							<h5 class="text-dark mb-3">Imagination will take us everywhere</h5>
-							<p class="font-weight-medium mb-4">Lorem ipsum dolor sit amet, <br> 
-								pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur
+							<h5 class="text-dark">Solusi Digital</h5>
+							<h3 class="font-weight-medium text-dark">School Sync siap untuk kalian!</h3>
+							<h5 class="text-dark mb-3">Apasih kelebihan menggunakan School Sync?</h5>
+							<p class="font-weight-medium mb-4">Kamu bisa mengelola :
 							</p>
 							<div class="d-flex justify-content-start mb-3">
 								<img src="home/images/tick.png" alt="tick" class="mr-3 tick-icon"  >
-								<p class="mb-0">Lorem ipsum dolor sit amet, pretium pretium</p>
+								<p class="mb-0">Presensi harian dengan mudah</p>
 							</div>
 							<div class="d-flex justify-content-start mb-3">
 								<img src="home/images/tick.png" alt="tick" class="mr-3 tick-icon"  >
-								<p class="mb-0">Lorem ipsum dolor sit amet, pretium pretium</p>
+								<p class="mb-0">Jadwal pelajaran setiap kelas</p>
+							</div>
+							<div class="d-flex justify-content-start mb-3">
+								<img src="home/images/tick.png" alt="tick" class="mr-3 tick-icon"  >
+								<p class="mb-0">Berita informasi kelas dan sekolah</p>
 							</div>
 							<div class="d-flex justify-content-start">
 								<img src="home/images/tick.png" alt="tick" class="mr-3 tick-icon"  >
-								<p class="mb-0">Lorem ipsum dolor sit amet, pretium pretium</p>
+								<p class="mb-0">Pemantauan dari sisi orang tua</p>
 							</div>
 						</div>
 						<div class="col-sm-6 text-right" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
 							<img src="home/images/idea.png" alt="idea" class="img-fluid">
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="testimonial" id="testimonial">
-				<div class="container">
-					<div class="row  mt-md-0 mt-lg-4">
-						<div class="col-sm-6 text-white" data-aos="fade-up">
-							<p class="font-weight-bold mb-3">Testimonials</p>
-							<h3 class="font-weight-medium">Our customers are our <br>biggest fans</h3>
-							<ul class="flipster-custom-nav">
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link" title="0"></a>
-								</li>
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link"  title="1"></a>
-								</li>
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link active" title="2"></a>
-								</li>
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link"  title="3"></a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-sm-6" data-aos="fade-up">
-							<div id="testimonial-flipster">
-								<ul>
-									<li>
-										<div class="testimonial-item">
-											<img src="home/images/testimonial/testimonial1.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Mark Spenser</h6>
-											<p class="testimonial-destination">Accounts</p>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-item">
-											<img src="home/images/testimonial/testimonial2.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Tua Manuera</h6>
-											<p class="testimonial-destination">Director,Dj market</p>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-item">
-											<img src="home/images/testimonial/testimonial3.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Sarah Philip</h6>
-											<p class="testimonial-destination">Chief Accountant</p>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-item">
-											<img src="home/images/testimonial/testimonial4.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Mark Spenser</h6>
-											<p class="testimonial-destination">Director,Dj market</p>
-										</div>
-									</li>
-								</ul>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -247,8 +100,8 @@
 							<img src="home/images/contact.jpg" alt="contact" class="img-fluid">
 						</div>
 						<div class="col-sm-7" data-aos="fade-up" data-aos-offset="-500">
-							<h3 class="font-weight-medium text-dark mt-5 mt-lg-0">Got A Problem</h3>
-							<h5 class="text-dark mb-5">Lorem ipsum dolor sit amet, consectetur pretium</h5>
+							<h3 class="font-weight-medium text-dark mt-5 mt-lg-0">Masukan</h3>
+							<h5 class="text-dark mb-5">Berikan masukan anda dibawah ini.</h5>
 							<form>
 								<div class="row">
 									<div class="col-sm-6">
