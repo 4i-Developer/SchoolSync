@@ -10,6 +10,7 @@ use App\Http\Controllers\BeritaSekolahController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\WaliController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,9 @@ Route::get('/beritaKelas/show', [BeritaKelasController::class, 'showBeritaKelas'
 Route::get('/beritaKelas/{id}', [BeritaKelasController::class, 'show'])->name('beritakelas.show');
 Route::get('/beritaSekolah/show', [BeritaSekolahController::class, 'showBeritaSekolah'])->name('beritasekolahshow');
 Route::get('/beritaSekolah/{id}', [BeritaSekolahController::class, 'show'])->name('beritasekolah.show');
+
+// API
+Route::get('/users/{id}', [UserController::class, 'getUserProfile']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

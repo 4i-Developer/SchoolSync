@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Dokumentasi API Profil Pengguna
+  version: 1.0.0
+  description: Dokumentasi API untuk profil pengguna
+
+paths:
+  /users/{id}:
+    get:
+      summary: Mendapatkan informasi profil pengguna berdasarkan ID
+      description: Mendapatkan informasi tentang nama, NIS, dan ID kelas dari pengguna.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID Pengguna
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Nama Pengguna
+                  nis:
+                    type: string
+                    description: Nomor Induk Siswa
+                  id_kelas:
+                    type: integer
+                    description: ID Kelas Pengguna
+        '404':
+          description: Pengguna tidak ditemukan
