@@ -56,8 +56,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/export-presensi', [PresensiController::class, 'exportPresensi'])->name('presensi.export');
         // jadwal
         Route::get('/guru/jadwal', [JadwalController::class, 'showJadwal'])->name('guru.jadwal');
-        Route::put('/jadwalUpdate/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
-        Route::get('/jadwalUpdate/{id}', [JadwalController::class, 'edit'])->name('jadwal.editJadwal');
+        Route::put('/jadwalUpdate/{id}/{hari}', [JadwalController::class, 'update'])->name('jadwal.update');
+        Route::get('/jadwalUpdate/{id}/{hari}', [JadwalController::class, 'edit'])->name('jadwal.editJadwal');
         // berita kelas
         Route::post('/beritaKelas', [BeritaKelasController::class, 'store'])->name('beritakelas.store');
         Route::get('/beritaKelas', [BeritaKelasController::class, 'index'])->name('beritakelas.daftarBerita');

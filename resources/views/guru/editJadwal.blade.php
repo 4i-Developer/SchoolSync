@@ -14,10 +14,10 @@ Kelas   : D3IF-4603
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <form action="{{ route('jadwal.update', $jadwal->id) }}" method="POST">
+                        <form action="{{ route('jadwal.update', ['id' => $jadwal->id, 'hari' => strtolower($hari)]) }}" method="POST">
                             @csrf
                             @method('PUT')
-
+                            @if ($hari == 'senin')
 <!-- Senin 1 -->
 <div class="mb-4">
     <label for="senin1" class="block text-sm font-medium text-gray-600">Senin - 07.00 - 09.30</label>
@@ -41,7 +41,7 @@ Kelas   : D3IF-4603
     <label for="senin4" class="block text-sm font-medium text-gray-600">Senin - 14.30 - 16.00</label>
     <input type="text" name="senin4" id="senin4" class="mt-1 p-2 border rounded-md w-full" value="{{ $jadwal->senin4 }}" required>
 </div>
-
+@elseif ($hari == 'selasa')
 <!-- Selasa 1 -->
 <div class="mb-4">
     <label for="selasa1" class="block text-sm font-medium text-gray-600">Selasa - 07.00 - 09.30</label>
@@ -65,7 +65,7 @@ Kelas   : D3IF-4603
     <label for="selasa4" class="block text-sm font-medium text-gray-600">Selasa - 14.30 - 16.00</label>
     <input type="text" name="selasa4" id="selasa4" class="mt-1 p-2 border rounded-md w-full" value="{{ $jadwal->selasa4 }}" required>
 </div>
-
+@elseif ($hari == 'rabu')
 <!-- Rabu 1 -->
 <div class="mb-4">
     <label for="rabu1" class="block text-sm font-medium text-gray-600">Rabu - 07.00 - 09.30</label>
@@ -89,7 +89,7 @@ Kelas   : D3IF-4603
     <label for="rabu4" class="block text-sm font-medium text-gray-600">Rabu - 14.30 - 16.00</label>
     <input type="text" name="rabu4" id="rabu4" class="mt-1 p-2 border rounded-md w-full" value="{{ $jadwal->rabu4 }}" required>
 </div>
-
+@elseif ($hari == 'kamis')
 <!-- Kamis 1 -->
 <div class="mb-4">
     <label for="kamis1" class="block text-sm font-medium text-gray-600">Kamis - 07.00 - 09.30</label>
@@ -113,7 +113,7 @@ Kelas   : D3IF-4603
     <label for="kamis4" class="block text-sm font-medium text-gray-600">Kamis - 14.30 - 16.00</label>
     <input type="text" name="kamis4" id="kamis4" class="mt-1 p-2 border rounded-md w-full" value="{{ $jadwal->kamis4 }}" required>
 </div>
-
+@elseif ($hari == 'jumat')
 <!-- Jumat 1 -->
 <div class="mb-4">
     <label for="jumat1" class="block text-sm font-medium text-gray-600">Jumat - 07.00 - 09.30</label>
@@ -137,7 +137,7 @@ Kelas   : D3IF-4603
     <label for="jumat4" class="block text-sm font-medium text-gray-600">Jumat - 14.30 - 16.00</label>
     <input type="text" name="jumat4" id="jumat4" class="mt-1 p-2 border rounded-md w-full" value="{{ $jadwal->jumat4 }}" required>
 </div>
-
+@endif
                             <!-- Tombol Submit -->
                             <div class="flex items-center justify-end mt-4">
                                 <a href="{{ route('guru.jadwal') }}" class="btn btn-dark mr-2">Kembali</a>

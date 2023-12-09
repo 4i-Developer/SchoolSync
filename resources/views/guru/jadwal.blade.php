@@ -59,7 +59,7 @@
                                     @endif
                                 </td>
                                 <td class="border px-4 py-2 text-center">
-                                    <a href="{{ route('jadwal.editJadwal', $kelas->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
+                                    <a href="{{ route('jadwal.editJadwal', ['id' => $kelas->id, 'hari' => 'senin']) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                 </td>
                             </tr>
                             <tr>
@@ -93,7 +93,7 @@
                                     @endif
                                 </td>
                                 <td class="border px-4 py-2 text-center">
-                                    <a href="{{ route('jadwal.editJadwal', $kelas->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
+                                    <a href="{{ route('jadwal.editJadwal', ['id' => $kelas->id, 'hari' => 'selasa']) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                 </td>
                             </tr>
                             <tr>
@@ -127,7 +127,7 @@
                                     @endif
                                 </td>
                                 <td class="border px-4 py-2 text-center">
-                                    <a href="{{ route('jadwal.editJadwal', $kelas->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
+                                    <a href="{{ route('jadwal.editJadwal', ['id' => $kelas->id, 'hari' => 'rabu']) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                 </td>
                             </tr>
                             <tr>
@@ -161,7 +161,7 @@
                                     @endif
                                 </td>
                                 <td class="border px-4 py-2 text-center">
-                                    <a href="{{ route('jadwal.editJadwal', $kelas->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
+                                    <a href="{{ route('jadwal.editJadwal', ['id' => $kelas->id, 'hari' => 'kamis']) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                 </td>
                             </tr>
                             <tr>
@@ -195,7 +195,7 @@
                                     @endif
                                 </td>
                                 <td class="border px-4 py-2 text-center">
-                                    <a href="{{ route('jadwal.editJadwal', $kelas->id) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
+                                    <a href="{{ route('jadwal.editJadwal', ['id' => $kelas->id, 'hari' => 'jumat']) }}" class="btn btn-icon btn-sm btn-dark">Edit</a>
                                 </td>
                             </tr>
                         </tbody>
