@@ -41,6 +41,9 @@ Route::get('/beritaSekolah/{id}', [BeritaSekolahController::class, 'show'])->nam
 // API
 Route::get('/users/{id}', [UserController::class, 'getUserProfile']);
 Route::get('/berita/{id}', [BeritaSekolahController::class, 'getBeritaSekolah']);
+Route::get('/api', function () {
+    return view('api/documentation');
+})->name('api.documentation');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
