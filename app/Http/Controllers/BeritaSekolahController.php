@@ -99,4 +99,20 @@ class BeritaSekolahController extends Controller
 
         return redirect()->route('beritasekolah.daftarBerita')->with('success', 'Berita berhasil diupdate!');
     }
+
+    public function getBeritaSekolah($id)
+    {
+        $berita = BeritaSekolah::find($id);
+
+        if (!$berita) {
+            return response()->json(['message' => 'Berita not found'], 404);
+        }
+
+        $beritaData = [
+            'judul' => $berita->judul,
+            'konten' => $berita->konten,
+        ];
+
+        return response()->json($beritaData);
+    }
 }

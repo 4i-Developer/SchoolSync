@@ -40,6 +40,7 @@ Route::get('/beritaSekolah/{id}', [BeritaSekolahController::class, 'show'])->nam
 
 // API
 Route::get('/users/{id}', [UserController::class, 'getUserProfile']);
+Route::get('/berita/{id}', [BeritaSekolahController::class, 'getBeritaSekolah']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
