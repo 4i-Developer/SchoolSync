@@ -34,6 +34,11 @@
                         {{ __('Berita') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('api.documentation')" :active="request()->routeIs('api.documentation')">
+                        {{ __('API Documentation') }}
+                    </x-nav-link>
+                </div>
             @elseif(Auth::user()->role === 'guru') 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                 <x-nav-link :href="route('siswa.daftarSiswa')" :active="request()->routeIs('siswa.daftarSiswa')">

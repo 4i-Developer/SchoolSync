@@ -11,7 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h3 class="text-lg font-semibold mb-4">Profile User</h3>
                     <p class="mb-2">Method: GET</p>
-                    <p class="mb-2">URL: /berita/{id}</p>
+                    <p class="mb-2">URL: /users/{id}</p>
                     <p>Digunakan untuk mendapatkan profile user berdasarkan ID.</p>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h3 class="text-lg font-semibold mb-4">Berita Sekolah</h3>
                     <p class="mb-2">Method: GET</p>
-                    <p class="mb-2">URL: /users/{id}</p>
+                    <p class="mb-2">URL: /berita/{id}</p>
                     <p>Digunakan untuk mendapatkan berita sekolah berdasarkan ID.</p>
                 </div>
             </div>
