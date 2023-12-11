@@ -43,6 +43,14 @@
         @endif
     </x-slot>
 
+    @if(Auth::user()->role === 'admin' || Auth::user()->role === 'wali' || Auth::user()->role === 'guru')
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <img src="{{ asset('images/dashboard/student.png') }}" alt="Dashboard Image" class="w-full">
+        </div>
+    </div>
+    @endif
+
     @if(Auth::user()->role === 'siswa')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
