@@ -1,38 +1,17 @@
-openapi: 3.0.0
-info:
-  title: Dokumentasi API Profil Pengguna
-  version: 1.0.0
-  description: Dokumentasi API untuk profil pengguna
+users:
+  - id: 1
+    id_murid: null
+    name: DAVIN WAHYU WARDANA
+    id_kelas: 1
+    nis: '3344235'
+    created_at: '2023-11-13T18:05:51.000000Z'
+    updated_at: '2023-11-13T18:05:51.000000Z'
 
-paths:
-  /users/{id}:
-    get:
-      summary: Mendapatkan informasi profil pengguna berdasarkan ID
-      description: Mendapatkan informasi tentang nama, NIS, dan ID kelas dari pengguna.
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: ID Pengguna
-          schema:
-            type: integer
-            format: int64
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    description: Nama Pengguna
-                  nis:
-                    type: string
-                    description: Nomor Induk Siswa
-                  id_kelas:
-                    type: integer
-                    description: ID Kelas Pengguna
-        '404':
-          description: Pengguna tidak ditemukan
+berita_sekolah:
+  - id: 1
+    judul: Contoh Berita Sekolah 1
+    konten: |
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    created_at: '2023-12-17T08:00:00.000000Z'
+    updated_at: '2023-12-17T08:00:00.000000Z'
