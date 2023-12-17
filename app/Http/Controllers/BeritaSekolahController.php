@@ -102,17 +102,12 @@ class BeritaSekolahController extends Controller
 
     public function getBeritaSekolah($id)
     {
-        $berita = BeritaSekolah::find($id);
-
+        $berita = BeritaSekolah::select('judul', 'konten')->find($id);
+        
         if (!$berita) {
             return response()->json(['message' => 'Berita not found'], 404);
         }
 
-        $beritaData = [
-            'judul' => $berita->judul,
-            'konten' => $berita->konten,
-        ];
-
-        return response()->json($beritaData);
+        return response()->json($berita);
     }
 }
